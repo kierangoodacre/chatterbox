@@ -16,12 +16,12 @@ RESPONSES = { 'how are you?' => 'I am well, how about you?',
               'That\'s cool, and what about (.*)' => 'yeah %{c1} aint bad'}
 require 'colorize'
 puts "Hello, what's your name?".colorize(:blue)
-name = gets.chomp.colorize(:green)
+name = gets.chomp
 puts "Bot - Hello #{name}".colorize(:blue)
-while(input = gets.chomp.colorize(:green)) do
-  puts 'Bot - '.colorize(:blue) + (get_response(input)).colorize(:blue)
-  if input.chomp == 'see ya later'
-  	puts 'Great see you soon'
-  		break
+while input = gets.chomp do
+   puts 'Bot - '.colorize(:blue) + (get_response(input)).colorize(:blue)
+  if input == 'see ya later' 
+    puts 'see ya!'
+  break
   end
 end
