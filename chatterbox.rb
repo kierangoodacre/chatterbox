@@ -1,3 +1,6 @@
+require 'colorize'
+
+
 def get_response(input)
   key = RESPONSES.keys.select {|k| /#{k}/ =~ input }.sample 
   /#{key}/ =~ input
@@ -14,7 +17,7 @@ RESPONSES = { 'how are you?' => 'I am well, how about you?',
               'I groove to (.*) and (.*). I\'m not really fussed about (.*) and (.*)' => 'I love %{c1} I\'m not a fan of %{c2}. I do really like %{c3} and %{c4} though',  
               'How about (.*) and (.*)' => 'Yes mate I like %{c1} and a bit of %{c2}',
               'That\'s cool, and what about (.*)' => 'yeah %{c1} aint bad'}
-require 'colorize'
+
 puts "Hello, what's your name?".colorize(:blue)
 name = gets.chomp
 puts "Bot - Hello #{name}".colorize(:blue)
